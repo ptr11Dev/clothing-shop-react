@@ -22,5 +22,6 @@ module.exports = {
     "simple-import-sort/exports": "error",
     "react/prop-types": "off",
     "no-unused-vars": "off",
+    "react/no-unescaped-entities": "off",
   },
 };
