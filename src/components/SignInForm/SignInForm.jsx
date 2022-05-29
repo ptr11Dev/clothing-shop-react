@@ -60,6 +60,7 @@ const SignInForm = () => {
       <span>Sign in with your email and password</span>
       <form onSubmit={handleSumbit}>
         <FormInput
+          autoComplete="email"
           required
           labelInput="Email"
           name="email"
@@ -68,6 +69,7 @@ const SignInForm = () => {
           value={email}
         />
         <FormInput
+          autoComplete="current-password"
           required
           labelInput="Password"
           name="password"
