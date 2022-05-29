@@ -59,6 +59,7 @@ const SignUpForm = () => {
       <span>Sign up with your email and password</span>
       <form onSubmit={handleSumbit}>
         <FormInput
+          autoComplete="username"
           required
           labelInput="Display Name"
           name="displayName"
@@ -67,6 +68,7 @@ const SignUpForm = () => {
           value={displayName}
         />
         <FormInput
+          autoComplete="email"
           required
           labelInput="Email"
           name="email"
@@ -75,6 +77,7 @@ const SignUpForm = () => {
           value={email}
         />
         <FormInput
+          autoComplete="new-password"
           required
           labelInput="Password"
           name="password"
@@ -83,6 +86,7 @@ const SignUpForm = () => {
           value={password}
         />
         <FormInput
+          autoComplete="new-password"
           required
           labelInput="Confirm Password"
           name="confirmPassword"
