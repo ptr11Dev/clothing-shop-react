@@ -1,14 +1,14 @@
-import "./CategoryItem.scss";
+import "./DirectoryItem.scss";
 
-const CategoryItem = ({ category }) => {
+const DirectoryItem = ({ category }) => {
   const { imageUrl, title } = category;
   return (
-    <div className="categoryContainer">
+    <div className="directoryItemContainer">
       <div
         className="backgroundImage"
         style={{ backgroundImage: `url(${imageUrl})` }}
       />
-      <div className="categoryBodyContainer">
+      <div className="directoryItemBody">
         <h2>{title}</h2>
         <p>Shop Now</p>
       </div>
@@ -16,4 +16,4 @@ const CategoryItem = ({ category }) => {
   );
 };
 
-export default CategoryItem;
+export default DirectoryItem;
