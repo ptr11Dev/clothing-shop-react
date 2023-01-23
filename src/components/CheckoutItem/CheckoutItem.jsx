@@ -22,9 +22,7 @@ const CheckoutItem = (props) => {
       </ImageContainer>
       <BaseSpan>{item.name}</BaseSpan>
       <Quantity as="div">
-        <span className="arrow" onClick={removeItemHandler}>
-          &#10094;
-        </span>
+        <Arrow onClick={removeItemHandler}>&#10094;</Arrow>
         <Value>{item.quantity}</Value>
         <Arrow onClick={addItemHandler}>&#10095;</Arrow>
       </Quantity>
