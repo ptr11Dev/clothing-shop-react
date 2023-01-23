@@ -1,10 +1,11 @@
-import "./CartIcon.scss";
-
-import { useState } from "react";
 import { useContext } from "react";
 
-import { ReactComponent as ShoppingIcon } from "../../assets/shoppingBag.svg";
 import { CartContext } from "../../contexts/Cart";
+import {
+  CartIconContainer,
+  ItemCount,
+  ShoppingIconContainer,
+} from "./CartIcon.styles";
 
 const CartIcon = () => {
   const { isCartVisible, setIsCartVisible, currentCartCount } =
@@ -13,10 +14,10 @@ const CartIcon = () => {
   const toggleCart = () => setIsCartVisible(!isCartVisible);
 
   return (
-    <div className="cartIconContainer" onClick={toggleCart}>
-      <ShoppingIcon className="shoppingIcon" />
-      <span className="itemCount">{currentCartCount}</span>
-    </div>
+    <CartIconContainer onClick={toggleCart}>
+      <ShoppingIconContainer />
+      <ItemCount>{currentCartCount}</ItemCount>
+    </CartIconContainer>
   );
 };
 export default CartIcon;

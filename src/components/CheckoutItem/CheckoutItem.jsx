@@ -1,4 +1,12 @@
-import "./CheckoutItem.scss";
+import {
+  Arrow,
+  BaseSpan,
+  CheckoutItemContainer,
+  ImageContainer,
+  Quantity,
+  RemoveButton,
+  Value,
+} from "./CheckoutItem.styles";
 
 const CheckoutItem = (props) => {
   const { item, addItem, removeItem, clearItem } = props;
@@ -8,25 +16,21 @@ const CheckoutItem = (props) => {
   const clearItemHandler = () => clearItem(item);
 
   return (
-    <div className="checkoutItemContainer">
-      <div className="imageContainer">
+    <CheckoutItemContainer>
+      <ImageContainer>
         <img src={item.imageUrl} alt={item.name} />
-      </div>
-      <span className="name">{item.name}</span>
-      <div className="quantity">
+      </ImageContainer>
+      <BaseSpan>{item.name}</BaseSpan>
+      <Quantity as="div">
         <span className="arrow" onClick={removeItemHandler}>
           &#10094;
         </span>
-        <span className="value">{item.quantity}</span>
-        <span className="arrow" onClick={addItemHandler}>
-          &#10095;
-        </span>
-      </div>
-      <span className="price">{item.price}</span>
-      <div className="removeButton" onClick={clearItemHandler}>
-        &#10005;
-      </div>
-    </div>
+        <Value>{item.quantity}</Value>
+        <Arrow onClick={addItemHandler}>&#10095;</Arrow>
+      </Quantity>
+      <BaseSpan>{item.price}</BaseSpan>
+      <RemoveButton onClick={clearItemHandler}>&#10005;</RemoveButton>
+    </CheckoutItemContainer>
   );
 };
 
