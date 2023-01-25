@@ -8,7 +8,7 @@ import {
 } from "./CartIcon.styles";
 
 const CartIcon = () => {
-  const { isCartVisible, setIsCartVisible, currentCartCount } =
+  const { isCartVisible, setIsCartVisible, cartCount } =
     useContext(CartContext);
 
   const toggleCart = () => setIsCartVisible(!isCartVisible);
@@ -16,7 +16,7 @@ const CartIcon = () => {
   return (
     <CartIconContainer onClick={toggleCart}>
       <ShoppingIconContainer />
-      <ItemCount>{currentCartCount}</ItemCount>
+      <ItemCount>{cartCount}</ItemCount>
     </CartIconContainer>
   );
 };
