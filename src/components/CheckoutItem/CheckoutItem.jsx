@@ -1,3 +1,6 @@
+import { useDispatch, useSelector } from "react-redux";
+
+import { selectCartItems } from "../../store/cart/cart.selector";
 import {
   Arrow,
   BaseSpan,
@@ -9,11 +12,13 @@ import {
 } from "./CheckoutItem.styles";
 
 const CheckoutItem = (props) => {
+  const cartItems = useSelector(selectCartItems);
   const { item, addItem, removeItem, clearItem } = props;
+  const dispatch = useDispatch();
 
-  const addItemHandler = () => addItem(item);
-  const removeItemHandler = () => removeItem(item);
-  const clearItemHandler = () => clearItem(item);
+  const addItemHandler = () => dispatch(addItem(cartItems, item));
+  const removeItemHandler = () => dispatch(removeItem(cartItems, item));
+  const clearItemHandler = () => dispatch(clearItem(cartItems, item));
 
   return (
     <CheckoutItemContainer>
