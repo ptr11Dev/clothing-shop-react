@@ -41,8 +41,6 @@ export const setIsCartVisible = (bool) =>
   createAction(CART_ACTION_TYPES.SET_IS_CART_VISIBLE, bool);
 
 export const addItemToCart = (cartItems, productToAdd) => {
-  console.log("cartItems", cartItems);
-  console.log("productToAdd", productToAdd);
   const newCartItems = addCartItem(cartItems, productToAdd);
   return createAction(CART_ACTION_TYPES.SET_CART_ITEMS, newCartItems);
 };
