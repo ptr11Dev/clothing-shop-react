@@ -1,5 +1,10 @@
 /* eslint-disable no-undef */
 module.exports = {
+  globals: {
+    process: true,
+    require: true,
+    exports: true,
+  },
   env: {
     browser: true,
     es2021: true,
