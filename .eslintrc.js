@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 module.exports = {
   globals: {
     process: true,
@@ -8,6 +7,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
   extends: [
     "eslint:recommended",
@@ -23,8 +23,8 @@ module.exports = {
   },
   plugins: ["react", "simple-import-sort"],
   rules: {
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": "warn",
+    "simple-import-sort/exports": "warn",
     "react/prop-types": "off",
     "no-unused-vars": "off",
     "react/no-unescaped-entities": "off",
